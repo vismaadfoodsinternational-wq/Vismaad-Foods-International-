@@ -10,6 +10,7 @@
 content="Vismaad Foods International - Quality gluten-free and nutritious food products.">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -111,6 +112,7 @@ nav a:hover{
 
 .hero{
     min-height:650px;
+
     background:
         linear-gradient(
             90deg,
@@ -118,10 +120,15 @@ nav a:hover{
             rgba(255,255,255,.9) 45%,
             rgba(255,255,255,.15) 100%
         ),
-        url("grok_1789629014292.jpg");
+        linear-gradient(
+            135deg,
+            #fff8e9,
+            #ffffff
+        );
 
     background-size:cover;
     background-position:center;
+
     display:flex;
     align-items:center;
 }
@@ -330,18 +337,41 @@ section{
     align-items:center;
 }
 
+/* NO BISCUIT IMAGE HERE */
+
 .about-image{
     border-radius:25px;
-    overflow:hidden;
     min-height:450px;
-    background:#eee;
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--dark-red)
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
 }
 
-.about-image img{
-    width:100%;
-    height:100%;
-    min-height:450px;
-    object-fit:cover;
+.about-image::before{
+    content:"VISMAAD";
+    font-family:Georgia,serif;
+    font-size:65px;
+    font-weight:bold;
+    color:rgba(255,255,255,.15);
+    position:absolute;
+    transform:rotate(-12deg);
+}
+
+.about-image::after{
+    content:"FOODS INTERNATIONAL";
+    letter-spacing:5px;
+    font-size:13px;
+    color:rgba(255,255,255,.8);
+    position:absolute;
 }
 
 .about-content small{
@@ -689,6 +719,7 @@ footer a{
         font-size:38px;
     }
 }
+
 </style>
 </head>
 
@@ -697,23 +728,51 @@ footer a{
 <!-- ================= HEADER ================= -->
 
 <header>
+
 <div class="navbar">
 
 <a href="#home" class="logo">
-    <div class="logo-circle">V</div>
-    <div class="logo-text">Vismaad</div>
+
+    <div class="logo-circle">
+        V
+    </div>
+
+    <div class="logo-text">
+        Vismaad
+    </div>
+
 </a>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About Us</a>
-    <a href="#quality">Quality</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="nav-btn">Enquire Now</a>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#products">
+        Products
+    </a>
+
+    <a href="#about">
+        About Us
+    </a>
+
+    <a href="#quality">
+        Quality
+    </a>
+
+    <a href="#contact">
+        Contact
+    </a>
+
+    <a href="#contact" class="nav-btn">
+        Enquire Now
+    </a>
+
 </nav>
 
 </div>
+
 </header>
 
 
@@ -793,9 +852,13 @@ Contact Us
 
 <div class="section-heading">
 
-<small>OUR PRODUCTS</small>
+<small>
+OUR PRODUCTS
+</small>
 
-<h2>Discover Vismaad</h2>
+<h2>
+Discover Vismaad
+</h2>
 
 <p>
 Explore our growing range of quality food products
@@ -823,7 +886,9 @@ alt="Vismaad Gluten Free Atta"
 
 <div class="product-info">
 
-<h3>Vismaad Gluten Free Atta</h3>
+<h3>
+Vismaad Gluten Free Atta
+</h3>
 
 <p>
 Quality gluten-free atta specially developed
@@ -854,7 +919,9 @@ alt="Vismaad Multigrain Atta"
 
 <div class="product-info">
 
-<h3>Vismaad Multigrain Atta</h3>
+<h3>
+Vismaad Multigrain Atta
+</h3>
 
 <p>
 A nutritious multigrain formulation designed
@@ -870,7 +937,7 @@ Enquire Now →
 </div>
 
 
-<!-- BISCUITS -->
+<!-- GLUTEN FREE BISCUITS -->
 
 <div class="product-card">
 
@@ -885,7 +952,9 @@ alt="Vismaad Gluten Free Biscuits"
 
 <div class="product-info">
 
-<h3>Vismaad Gluten Free Biscuits</h3>
+<h3>
+Vismaad Gluten Free Biscuits
+</h3>
 
 <p>
 Delicious gluten-free biscuits made for
@@ -903,6 +972,7 @@ Enquire Now →
 
 </div>
 </div>
+
 </section>
 
 
@@ -914,20 +984,22 @@ Enquire Now →
 
 <div class="about-grid">
 
+
+<!-- ABOUT VISUAL - NO PRODUCT IMAGE -->
+
 <div class="about-image">
-
-<img
-src="grok_1789629014292.jpg"
-alt="Vismaad Foods"
->
-
 </div>
+
 
 <div class="about-content">
 
-<small>ABOUT VISMAAD</small>
+<small>
+ABOUT VISMAAD
+</small>
 
-<h2>Food Made With Purpose.</h2>
+<h2>
+Food Made With Purpose.
+</h2>
 
 <p>
 Vismaad Foods International is focused on developing
@@ -942,16 +1014,28 @@ food products designed for everyday Indian lifestyles.
 
 <ul class="check-list">
 
-<li>Quality-focused products</li>
-<li>Gluten-free food options</li>
-<li>Carefully developed formulations</li>
-<li>Made for everyday Indian food habits</li>
+<li>
+Quality-focused products
+</li>
+
+<li>
+Gluten-free food options
+</li>
+
+<li>
+Carefully developed formulations
+</li>
+
+<li>
+Made for everyday Indian food habits
+</li>
 
 </ul>
 
 </div>
 
 </div>
+
 </div>
 
 </section>
@@ -965,9 +1049,13 @@ food products designed for everyday Indian lifestyles.
 
 <div class="section-heading">
 
-<small>OUR PROMISE</small>
+<small>
+OUR PROMISE
+</small>
 
-<h2>Quality Comes First</h2>
+<h2>
+Quality Comes First
+</h2>
 
 <p>
 We focus on quality, consistency and better food experiences.
@@ -981,9 +1069,13 @@ We focus on quality, consistency and better food experiences.
 
 <div class="quality-card">
 
-<div class="quality-icon">✓</div>
+<div class="quality-icon">
+✓
+</div>
 
-<h3>Quality</h3>
+<h3>
+Quality
+</h3>
 
 <p>
 Consistent focus on product quality and standards.
@@ -994,9 +1086,13 @@ Consistent focus on product quality and standards.
 
 <div class="quality-card">
 
-<div class="quality-icon">♡</div>
+<div class="quality-icon">
+♡
+</div>
 
-<h3>Nutrition</h3>
+<h3>
+Nutrition
+</h3>
 
 <p>
 Products developed with everyday nutrition in mind.
@@ -1007,9 +1103,13 @@ Products developed with everyday nutrition in mind.
 
 <div class="quality-card">
 
-<div class="quality-icon">★</div>
+<div class="quality-icon">
+★
+</div>
 
-<h3>Taste</h3>
+<h3>
+Taste
+</h3>
 
 <p>
 We believe healthy food should also taste good.
@@ -1020,9 +1120,13 @@ We believe healthy food should also taste good.
 
 <div class="quality-card">
 
-<div class="quality-icon">✓</div>
+<div class="quality-icon">
+✓
+</div>
 
-<h3>Trust</h3>
+<h3>
+Trust
+</h3>
 
 <p>
 Building long-term relationships with our customers.
@@ -1032,6 +1136,7 @@ Building long-term relationships with our customers.
 
 
 </div>
+
 </div>
 
 </section>
@@ -1043,7 +1148,9 @@ Building long-term relationships with our customers.
 
 <div class="container">
 
-<h2>Looking for Quality Food Products?</h2>
+<h2>
+Looking for Quality Food Products?
+</h2>
 
 <p>
 Get in touch with Vismaad Foods International
@@ -1070,7 +1177,9 @@ Contact Vismaad
 
 <div class="contact-info">
 
-<h2>Let's Talk.</h2>
+<h2>
+Let's Talk.
+</h2>
 
 <p>
 Have a product enquiry, distribution requirement
@@ -1080,7 +1189,9 @@ or business proposal? Contact us.
 
 <div class="contact-item">
 
-<strong>WhatsApp / Phone</strong>
+<strong>
+WhatsApp / Phone
+</strong>
 
 <a href="tel:+919463948067">
 +91 94639 48067
@@ -1091,7 +1202,9 @@ or business proposal? Contact us.
 
 <div class="contact-item">
 
-<strong>WhatsApp</strong>
+<strong>
+WhatsApp
+</strong>
 
 <a
 href="https://wa.me/919463948067"
@@ -1105,7 +1218,9 @@ Chat with us on WhatsApp
 
 <div class="contact-item">
 
-<strong>Company</strong>
+<strong>
+Company
+</strong>
 
 <span>
 Vismaad Foods International
@@ -1159,6 +1274,7 @@ Send Enquiry on WhatsApp
 
 
 </div>
+
 </div>
 
 </section>
@@ -1191,11 +1307,25 @@ Quality Food. Better Living.
 Quick Links
 </div>
 
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About Us</a>
-<a href="#quality">Quality</a>
-<a href="#contact">Contact</a>
+<a href="#home">
+Home
+</a>
+
+<a href="#products">
+Products
+</a>
+
+<a href="#about">
+About Us
+</a>
+
+<a href="#quality">
+Quality
+</a>
+
+<a href="#contact">
+Contact
+</a>
 
 </div>
 
@@ -1210,8 +1340,10 @@ Contact
 +91 94639 48067
 </a>
 
-<a href="https://wa.me/919463948067"
-target="_blank">
+<a
+href="https://wa.me/919463948067"
+target="_blank"
+>
 WhatsApp
 </a>
 
@@ -1246,21 +1378,31 @@ aria-label="WhatsApp"
 
 <script>
 
-document.getElementById("whatsappForm").addEventListener("submit", function(e){
+document
+.getElementById("whatsappForm")
+.addEventListener("submit", function(e){
 
     e.preventDefault();
 
     const name =
-        document.getElementById("name").value;
+        document
+        .getElementById("name")
+        .value;
 
     const phone =
-        document.getElementById("phone").value;
+        document
+        .getElementById("phone")
+        .value;
 
     const subject =
-        document.getElementById("subject").value;
+        document
+        .getElementById("subject")
+        .value;
 
     const message =
-        document.getElementById("message").value;
+        document
+        .getElementById("message")
+        .value;
 
 
     const whatsappMessage =
@@ -1288,4 +1430,4 @@ ${message}`;
 </script>
 
 </body>
-</html>
+    </html>
