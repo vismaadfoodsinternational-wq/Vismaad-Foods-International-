@@ -159,40 +159,81 @@ nav a:hover{
     color:#fff;
 }
 
-/* ================= STATS ================= */
+/* ================= RED STATS DESIGN ================= */
 
 .stats{
-    padding:35px 0;
-    background:#fff;
+    position:relative;
+    background:#b3131b;
+    padding:0;
+    overflow:hidden;
+}
+
+/* Decorative red design */
+
+.stats::before{
+    content:"";
+    position:absolute;
+    top:-80px;
+    left:-80px;
+    width:220px;
+    height:220px;
+    border:35px solid rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.stats::after{
+    content:"";
+    position:absolute;
+    bottom:-100px;
+    right:-70px;
+    width:240px;
+    height:240px;
+    border:35px solid rgba(255,255,255,.08);
+    border-radius:50%;
 }
 
 .stats-grid{
+    position:relative;
+    z-index:2;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
 }
 
 .stat{
+    position:relative;
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:20px 10px;
-    border-right:1px solid #eee;
+    padding:25px 15px;
+    color:#fff;
 }
 
-.stat:last-child{
-    border-right:none;
+.stat:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:28px;
+    bottom:28px;
+    width:1px;
+    background:rgba(255,255,255,.3);
 }
 
 .stat strong{
     display:block;
-    font-size:27px;
-    color:#b3131b;
-    margin-bottom:5px;
+    font-size:28px;
+    line-height:1.2;
+    color:#fff;
+    margin-bottom:7px;
+    font-weight:800;
 }
 
 .stat span{
     display:block;
     font-size:14px;
-    color:#666;
+    color:rgba(255,255,255,.9);
     font-weight:600;
 }
 
@@ -548,13 +589,14 @@ footer{
     font-size:28px;
     box-shadow:0 5px 20px rgba(0,0,0,.2);
     z-index:999;
+    transition:.3s;
 }
 
 .whatsapp-float:hover{
     transform:scale(1.08);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
@@ -574,8 +616,12 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .stat:nth-child(2){
-        border-right:none;
+    .stat:nth-child(2)::after{
+        display:none;
+    }
+
+    .stat:nth-child(3)::after{
+        display:block;
     }
 
     .product-grid{
@@ -606,6 +652,8 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:650px){
 
@@ -645,19 +693,35 @@ footer{
         font-size:30px;
     }
 
+    /* RED STATS MOBILE */
+
     .stats-grid{
         grid-template-columns:1fr 1fr;
-        gap:10px;
     }
 
     .stat{
-        border-right:none;
-        border-bottom:1px solid #eee;
+        min-height:130px;
+        padding:20px 10px;
     }
 
-    .stat:nth-child(3),
-    .stat:nth-child(4){
-        border-bottom:none;
+    .stat strong{
+        font-size:24px;
+    }
+
+    .stat span{
+        font-size:12px;
+    }
+
+    .stat:not(:last-child)::after{
+        display:none;
+    }
+
+    .stat:nth-child(odd){
+        border-right:1px solid rgba(255,255,255,.3);
+    }
+
+    .stat:nth-child(-n+2){
+        border-bottom:1px solid rgba(255,255,255,.3);
     }
 
     .product-grid{
@@ -719,7 +783,9 @@ footer{
     <div class="container navbar">
 
         <a href="#home" class="logo">
-            <img src="grok_1789630118526.jpg" alt="Vismaad Foods International Logo">
+            <img
+                src="grok_1789630118526.jpg"
+                alt="Vismaad Foods International Logo">
         </a>
 
         <nav>
@@ -738,6 +804,7 @@ footer{
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
+
     <div class="container">
 
         <div class="hero-content">
@@ -752,6 +819,7 @@ footer{
             </p>
 
             <div class="hero-buttons">
+
                 <a href="#products" class="btn btn-primary">
                     Explore Products
                 </a>
@@ -759,17 +827,20 @@ footer{
                 <a href="#contact" class="btn btn-secondary">
                     Contact Us
                 </a>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
-<!-- ================= STATS ================= -->
+<!-- ================= RED STATS ================= -->
 
 <section class="stats">
+
     <div class="container">
 
         <div class="stats-grid">
@@ -797,6 +868,7 @@ footer{
         </div>
 
     </div>
+
 </section>
 
 
@@ -807,25 +879,30 @@ footer{
     <div class="container">
 
         <div class="section-heading">
+
             <h2>Our Products</h2>
 
             <p>
                 Explore our range of thoughtfully prepared food
                 products designed for everyday nutrition and taste.
             </p>
+
         </div>
 
 
         <div class="product-grid">
 
-            <!-- Gluten Free Atta -->
+
+            <!-- GLUTEN FREE ATTA -->
 
             <div class="product-card">
 
                 <div class="product-image">
+
                     <img
                         src="17896240457092059873640069671874.jpg"
                         alt="Vismaad Gluten Free Atta">
+
                 </div>
 
                 <div class="product-info">
@@ -842,14 +919,16 @@ footer{
             </div>
 
 
-            <!-- Multigrain Atta -->
+            <!-- MULTIGRAIN ATTA -->
 
             <div class="product-card">
 
                 <div class="product-image">
+
                     <img
                         src="file_00000000c9ec82119b9ebdb98b1c7db1.png"
                         alt="Vismaad Multigrain Atta">
+
                 </div>
 
                 <div class="product-info">
@@ -866,7 +945,7 @@ footer{
             </div>
 
 
-            <!-- Gluten Free Biscuits -->
+            <!-- GLUTEN FREE BISCUITS -->
 
             <div class="product-card">
 
@@ -971,6 +1050,7 @@ footer{
 
         <div class="quality-grid">
 
+
             <div class="quality-card">
 
                 <div class="quality-icon">✓</div>
@@ -1060,8 +1140,6 @@ footer{
         <div class="contact-grid">
 
 
-            <!-- Contact Information -->
-
             <div class="contact-info">
 
                 <h2>Contact Us</h2>
@@ -1100,8 +1178,6 @@ footer{
 
             </div>
 
-
-            <!-- Contact Form -->
 
             <div class="contact-form">
 
@@ -1216,13 +1292,9 @@ footer{
                 <h3>Quick Links</h3>
 
                 <a href="#home">Home</a>
-
                 <a href="#products">Products</a>
-
                 <a href="#about">About Us</a>
-
                 <a href="#quality">Quality</a>
-
                 <a href="#contact">Contact</a>
 
             </div>
@@ -1324,4 +1396,4 @@ Thank you.`;
 </script>
 
 </body>
-   </html>
+                </html>
