@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,6 +11,10 @@
 content="Vismaad Foods International - Quality gluten-free and nutritious food products.">
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     margin:0;
@@ -37,7 +42,10 @@ body{
     --dark:#222;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:sticky;
@@ -51,38 +59,30 @@ header{
 .navbar{
     max-width:1200px;
     margin:auto;
-    padding:14px 25px;
+    padding:10px 25px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
+/* VISMAAD OVAL LOGO */
+
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
     text-decoration:none;
 }
 
-.logo-circle{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:var(--red);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    font-weight:bold;
+.vismaad-logo{
+    width:180px;
+    height:auto;
+    display:block;
+    object-fit:contain;
 }
 
-.logo-text{
-    font-family:Georgia,serif;
-    font-size:25px;
-    font-weight:bold;
-    color:var(--red);
-}
+
+/* NAVIGATION */
 
 nav{
     display:flex;
@@ -108,51 +108,76 @@ nav a:hover{
     border-radius:25px;
 }
 
-/* ================= HERO ================= */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:650px;
 
     background:
         linear-gradient(
-            90deg,
-            rgba(255,255,255,.97) 0%,
-            rgba(255,255,255,.9) 45%,
-            rgba(255,255,255,.15) 100%
-        ),
-        linear-gradient(
             135deg,
-            #fff8e9,
-            #ffffff
+            #fff8e9 0%,
+            #ffffff 55%,
+            #f8eee0 100%
         );
-
-    background-size:cover;
-    background-position:center;
 
     display:flex;
     align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"VISMAAD";
+
+    position:absolute;
+    right:-80px;
+    bottom:-100px;
+
+    font-family:Georgia,serif;
+    font-size:180px;
+    font-weight:bold;
+
+    color:rgba(167,25,36,.045);
+
+    transform:rotate(-10deg);
+
+    pointer-events:none;
 }
 
 .hero-content{
     max-width:1200px;
     width:100%;
     margin:auto;
+
     padding:70px 25px;
+
+    position:relative;
+    z-index:2;
 }
 
 .hero-small{
     color:var(--red);
+
     letter-spacing:5px;
+
     font-weight:bold;
     font-size:15px;
+
     margin-bottom:15px;
 }
 
 .hero h1{
     font-family:Georgia,serif;
+
     font-size:68px;
     line-height:1.05;
+
     max-width:650px;
+
     margin-bottom:25px;
 }
 
@@ -162,8 +187,11 @@ nav a:hover{
 
 .hero p{
     max-width:560px;
+
     font-size:19px;
+
     color:#555;
+
     margin-bottom:30px;
 }
 
@@ -175,9 +203,13 @@ nav a:hover{
 
 .btn{
     display:inline-block;
+
     padding:14px 25px;
+
     border-radius:30px;
+
     text-decoration:none;
+
     font-weight:bold;
 }
 
@@ -191,7 +223,10 @@ nav a:hover{
     color:var(--red);
 }
 
-/* ================= STATS ================= */
+
+/* =========================
+   STATS
+========================= */
 
 .stats{
     background:var(--red);
@@ -200,15 +235,21 @@ nav a:hover{
 
 .stats-container{
     max-width:1200px;
+
     margin:auto;
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     text-align:center;
 }
 
 .stat{
     padding:25px 10px;
-    border-right:1px solid rgba(255,255,255,.25);
+
+    border-right:
+        1px solid rgba(255,255,255,.25);
 }
 
 .stat:last-child{
@@ -224,7 +265,10 @@ nav a:hover{
     opacity:.9;
 }
 
-/* ================= GENERAL ================= */
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section{
     padding:90px 20px;
@@ -242,25 +286,36 @@ section{
 
 .section-heading small{
     color:var(--red);
+
     letter-spacing:5px;
+
     font-weight:bold;
+
     font-size:14px;
 }
 
 .section-heading h2{
     font-family:Georgia,serif;
+
     font-size:52px;
+
     margin:15px 0;
 }
 
 .section-heading p{
     max-width:700px;
+
     margin:auto;
+
     color:#666;
+
     font-size:18px;
 }
 
-/* ================= PRODUCTS ================= */
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
     background:#fff;
@@ -268,37 +323,53 @@ section{
 
 .product-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:28px;
 }
 
 .product-card{
     background:var(--cream);
+
     border-radius:25px;
+
     overflow:hidden;
+
     border:1px solid #e7dfcf;
+
     transition:.3s;
 }
 
 .product-card:hover{
     transform:translateY(-7px);
-    box-shadow:0 15px 35px rgba(0,0,0,.1);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.1);
 }
 
 .product-image{
     width:100%;
+
     height:420px;
+
     background:#fff;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     overflow:hidden;
 }
 
 .product-image img{
     width:100%;
     height:100%;
+
     object-fit:contain;
+
     display:block;
 }
 
@@ -308,7 +379,9 @@ section{
 
 .product-info h3{
     font-family:Georgia,serif;
+
     font-size:27px;
+
     margin-bottom:10px;
 }
 
@@ -318,13 +391,20 @@ section{
 
 .product-link{
     display:inline-block;
+
     margin-top:18px;
+
     color:var(--red);
+
     font-weight:bold;
+
     text-decoration:none;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
     background:var(--light);
@@ -332,16 +412,24 @@ section{
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:70px;
+
     align-items:center;
 }
 
-/* NO BISCUIT IMAGE HERE */
+
+/* DECORATIVE ABOUT PANEL
+   NO PRODUCT IMAGE */
 
 .about-image{
     border-radius:25px;
+
     min-height:450px;
+
     background:
         linear-gradient(
             135deg,
@@ -350,65 +438,92 @@ section{
         );
 
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     position:relative;
+
     overflow:hidden;
 }
 
 .about-image::before{
     content:"VISMAAD";
+
     font-family:Georgia,serif;
+
     font-size:65px;
+
     font-weight:bold;
+
     color:rgba(255,255,255,.15);
+
     position:absolute;
+
     transform:rotate(-12deg);
 }
 
 .about-image::after{
     content:"FOODS INTERNATIONAL";
+
     letter-spacing:5px;
+
     font-size:13px;
+
     color:rgba(255,255,255,.8);
+
     position:absolute;
 }
 
 .about-content small{
     color:var(--red);
+
     letter-spacing:4px;
+
     font-weight:bold;
 }
 
 .about-content h2{
     font-family:Georgia,serif;
+
     font-size:48px;
-    margin:15px 0 20px;
+
+    margin:
+        15px 0 20px;
 }
 
 .about-content p{
     color:#666;
+
     margin-bottom:18px;
 }
 
 .check-list{
     list-style:none;
+
     margin-top:25px;
 }
 
 .check-list li{
     margin:12px 0;
+
     font-weight:600;
 }
 
 .check-list li::before{
     content:"✓";
+
     color:var(--red);
+
     font-weight:bold;
+
     margin-right:12px;
 }
 
-/* ================= QUALITY ================= */
+
+/* =========================
+   QUALITY
+========================= */
 
 .quality{
     background:#fff;
@@ -416,28 +531,42 @@ section{
 
 .quality-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:25px;
 }
 
 .quality-card{
     text-align:center;
+
     padding:35px 20px;
+
     background:var(--cream);
+
     border-radius:20px;
 }
 
 .quality-icon{
     width:65px;
     height:65px;
+
     border-radius:50%;
+
     background:var(--red);
+
     color:#fff;
+
     display:flex;
+
     justify-content:center;
     align-items:center;
+
     font-size:28px;
-    margin:0 auto 20px;
+
+    margin:
+        0 auto 20px;
 }
 
 .quality-card h3{
@@ -446,35 +575,50 @@ section{
 
 .quality-card p{
     color:#666;
+
     font-size:14px;
 }
 
-/* ================= CTA ================= */
+
+/* =========================
+   CTA
+========================= */
 
 .cta{
     background:var(--red);
+
     color:#fff;
+
     text-align:center;
 }
 
 .cta h2{
     font-family:Georgia,serif;
+
     font-size:50px;
+
     margin-bottom:15px;
 }
 
 .cta p{
     max-width:650px;
-    margin:0 auto 30px;
+
+    margin:
+        0 auto 30px;
+
     opacity:.9;
 }
 
 .cta .btn{
     background:#fff;
+
     color:var(--red);
 }
 
-/* ================= CONTACT ================= */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
     background:var(--light);
@@ -482,18 +626,24 @@ section{
 
 .contact-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:50px;
 }
 
 .contact-info h2{
     font-family:Georgia,serif;
+
     font-size:45px;
+
     margin-bottom:20px;
 }
 
 .contact-info p{
     color:#666;
+
     margin-bottom:25px;
 }
 
@@ -503,123 +653,196 @@ section{
 
 .contact-item strong{
     display:block;
+
     color:var(--red);
+
     margin-bottom:4px;
 }
 
 .contact-item a{
     color:#222;
+
     text-decoration:none;
+
     font-weight:600;
 }
 
 .contact-form{
     background:#fff;
+
     padding:35px;
+
     border-radius:25px;
-    box-shadow:0 10px 35px rgba(0,0,0,.06);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.06);
 }
 
 .contact-form input,
 .contact-form textarea{
+
     width:100%;
+
     border:1px solid #ddd;
+
     padding:14px;
+
     border-radius:10px;
+
     margin-bottom:15px;
+
     font-family:inherit;
+
     font-size:15px;
 }
 
 .contact-form textarea{
     min-height:140px;
+
     resize:vertical;
 }
 
 .contact-form button{
+
     width:100%;
+
     border:none;
+
     background:var(--red);
+
     color:#fff;
+
     padding:15px;
+
     border-radius:30px;
+
     font-size:16px;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#171717;
+
     color:#fff;
-    padding:45px 20px 25px;
+
+    padding:
+        45px 20px 25px;
 }
 
 .footer-container{
     max-width:1200px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
     gap:50px;
 }
 
 .footer-logo{
-    font-family:Georgia,serif;
-    font-size:30px;
-    color:#fff;
     margin-bottom:12px;
+}
+
+.footer-logo img{
+    width:170px;
+
+    height:auto;
+
+    display:block;
 }
 
 footer p{
     color:#bbb;
+
     font-size:14px;
 }
 
 .footer-title{
     font-weight:bold;
+
     margin-bottom:15px;
 }
 
 footer a{
     color:#bbb;
+
     text-decoration:none;
+
     display:block;
+
     margin:8px 0;
+
     font-size:14px;
 }
 
 .footer-bottom{
     max-width:1200px;
-    margin:35px auto 0;
+
+    margin:
+        35px auto 0;
+
     padding-top:20px;
-    border-top:1px solid #333;
+
+    border-top:
+        1px solid #333;
+
     text-align:center;
+
     color:#888;
+
     font-size:13px;
 }
 
-/* ================= WHATSAPP ================= */
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 
 .whatsapp{
     position:fixed;
+
     right:22px;
     bottom:22px;
+
     width:62px;
     height:62px;
+
     background:#25D366;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     color:#fff;
+
     text-decoration:none;
+
     font-size:29px;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.2);
+
     z-index:2000;
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
@@ -627,9 +850,12 @@ footer a{
         display:none;
     }
 
+    .vismaad-logo{
+        width:165px;
+    }
+
     .hero{
         min-height:620px;
-        background-position:center;
     }
 
     .hero h1{
@@ -637,7 +863,8 @@ footer a{
     }
 
     .stats-container{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .product-grid{
@@ -653,7 +880,8 @@ footer a{
     }
 
     .quality-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .contact-grid{
@@ -665,6 +893,11 @@ footer a{
     }
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:500px){
 
     section{
@@ -672,7 +905,11 @@ footer a{
     }
 
     .navbar{
-        padding:12px 15px;
+        padding:8px 15px;
+    }
+
+    .vismaad-logo{
+        width:145px;
     }
 
     .hero{
@@ -718,14 +955,24 @@ footer a{
     .contact-info h2{
         font-size:38px;
     }
+
+    .footer-logo img{
+        width:150px;
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -733,579 +980,16 @@ footer a{
 
 <a href="#home" class="logo">
 
-    <div class="logo-circle">
-        V
-    </div>
-
-    <div class="logo-text">
-        Vismaad
-    </div>
+<img
+src="1000938890.jpg"
+alt="Vismaad Foods International Logo"
+class="vismaad-logo"
+>
 
 </a>
+
 
 <nav>
-
-    <a href="#home">
-        Home
-    </a>
-
-    <a href="#products">
-        Products
-    </a>
-
-    <a href="#about">
-        About Us
-    </a>
-
-    <a href="#quality">
-        Quality
-    </a>
-
-    <a href="#contact">
-        Contact
-    </a>
-
-    <a href="#contact" class="nav-btn">
-        Enquire Now
-    </a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<div class="hero-small">
-VISMAAD FOODS INTERNATIONAL
-</div>
-
-<h1>
-Good Food.<br>
-<span>Better Living.</span>
-</h1>
-
-<p>
-Quality food products made with care, innovation and a commitment
-to better everyday nutrition.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#products" class="btn btn-primary">
-Explore Products
-</a>
-
-<a href="#contact" class="btn btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= STATS ================= -->
-
-<div class="stats">
-
-<div class="stats-container">
-
-<div class="stat">
-<h3>1986</h3>
-<p>Since</p>
-</div>
-
-<div class="stat">
-<h3>100%</h3>
-<p>Quality Focus</p>
-</div>
-
-<div class="stat">
-<h3>GF</h3>
-<p>Gluten Free Range</p>
-</div>
-
-<div class="stat">
-<h3>India</h3>
-<p>Made for India</p>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section class="products" id="products">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>
-OUR PRODUCTS
-</small>
-
-<h2>
-Discover Vismaad
-</h2>
-
-<p>
-Explore our growing range of quality food products
-developed for today's consumers.
-</p>
-
-</div>
-
-
-<div class="product-grid">
-
-
-<!-- GLUTEN FREE ATTA -->
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img
-src="17896240457092059873640069671874.jpg"
-alt="Vismaad Gluten Free Atta"
->
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Vismaad Gluten Free Atta
-</h3>
-
-<p>
-Quality gluten-free atta specially developed
-for delicious everyday Indian cooking.
-</p>
-
-<a href="#contact" class="product-link">
-Enquire Now →
-</a>
-
-</div>
-
-</div>
-
-
-<!-- MULTIGRAIN ATTA -->
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img
-src="file_00000000c9ec82119b9ebdb98b1c7db1.png"
-alt="Vismaad Multigrain Atta"
->
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Vismaad Multigrain Atta
-</h3>
-
-<p>
-A nutritious multigrain formulation designed
-for wholesome everyday meals.
-</p>
-
-<a href="#contact" class="product-link">
-Enquire Now →
-</a>
-
-</div>
-
-</div>
-
-
-<!-- GLUTEN FREE BISCUITS -->
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img
-src="grok_1789629014292.jpg"
-alt="Vismaad Gluten Free Biscuits"
->
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Vismaad Gluten Free Biscuits
-</h3>
-
-<p>
-Delicious gluten-free biscuits made for
-enjoyable everyday snacking.
-</p>
-
-<a href="#contact" class="product-link">
-Enquire Now →
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-</div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="about-grid">
-
-
-<!-- ABOUT VISUAL - NO PRODUCT IMAGE -->
-
-<div class="about-image">
-</div>
-
-
-<div class="about-content">
-
-<small>
-ABOUT VISMAAD
-</small>
-
-<h2>
-Food Made With Purpose.
-</h2>
-
-<p>
-Vismaad Foods International is focused on developing
-quality food products for modern consumers while
-maintaining taste, nutrition and quality.
-</p>
-
-<p>
-Our product range includes gluten-free and nutritious
-food products designed for everyday Indian lifestyles.
-</p>
-
-<ul class="check-list">
-
-<li>
-Quality-focused products
-</li>
-
-<li>
-Gluten-free food options
-</li>
-
-<li>
-Carefully developed formulations
-</li>
-
-<li>
-Made for everyday Indian food habits
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= QUALITY ================= -->
-
-<section class="quality" id="quality">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>
-OUR PROMISE
-</small>
-
-<h2>
-Quality Comes First
-</h2>
-
-<p>
-We focus on quality, consistency and better food experiences.
-</p>
-
-</div>
-
-
-<div class="quality-grid">
-
-
-<div class="quality-card">
-
-<div class="quality-icon">
-✓
-</div>
-
-<h3>
-Quality
-</h3>
-
-<p>
-Consistent focus on product quality and standards.
-</p>
-
-</div>
-
-
-<div class="quality-card">
-
-<div class="quality-icon">
-♡
-</div>
-
-<h3>
-Nutrition
-</h3>
-
-<p>
-Products developed with everyday nutrition in mind.
-</p>
-
-</div>
-
-
-<div class="quality-card">
-
-<div class="quality-icon">
-★
-</div>
-
-<h3>
-Taste
-</h3>
-
-<p>
-We believe healthy food should also taste good.
-</p>
-
-</div>
-
-
-<div class="quality-card">
-
-<div class="quality-icon">
-✓
-</div>
-
-<h3>
-Trust
-</h3>
-
-<p>
-Building long-term relationships with our customers.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>
-Looking for Quality Food Products?
-</h2>
-
-<p>
-Get in touch with Vismaad Foods International
-for product enquiries and business opportunities.
-</p>
-
-<a href="#contact" class="btn">
-Contact Vismaad
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="contact-grid">
-
-
-<div class="contact-info">
-
-<h2>
-Let's Talk.
-</h2>
-
-<p>
-Have a product enquiry, distribution requirement
-or business proposal? Contact us.
-</p>
-
-
-<div class="contact-item">
-
-<strong>
-WhatsApp / Phone
-</strong>
-
-<a href="tel:+919463948067">
-+91 94639 48067
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<strong>
-WhatsApp
-</strong>
-
-<a
-href="https://wa.me/919463948067"
-target="_blank"
->
-Chat with us on WhatsApp
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<strong>
-Company
-</strong>
-
-<span>
-Vismaad Foods International
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- FORM -->
-
-<div class="contact-form">
-
-<form id="whatsappForm">
-
-<input
-type="text"
-id="name"
-placeholder="Your Name"
-required
->
-
-<input
-type="tel"
-id="phone"
-placeholder="Phone Number"
-required
->
-
-<input
-type="text"
-id="subject"
-placeholder="Product / Enquiry"
->
-
-<textarea
-id="message"
-placeholder="Tell us about your requirement..."
-required
-></textarea>
-
-<button type="submit">
-Send Enquiry on WhatsApp
-</button>
-
-</form>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-container">
-
-
-<div>
-
-<div class="footer-logo">
-Vismaad
-</div>
-
-<p>
-Vismaad Foods International<br>
-Quality Food. Better Living.
-</p>
-
-</div>
-
-
-<div>
-
-<div class="footer-title">
-Quick Links
-</div>
 
 <a href="#home">
 Home
@@ -1327,25 +1011,789 @@ Quality
 Contact
 </a>
 
+<a href="#contact" class="nav-btn">
+Enquire Now
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+VISMAAD FOODS INTERNATIONAL
 </div>
 
 
-<div>
+<h1>
 
-<div class="footer-title">
-Contact
+Good Food.<br>
+
+<span>
+Better Living.
+</span>
+
+</h1>
+
+
+<p>
+
+Quality food products made with care,
+innovation and a commitment to better
+everyday nutrition.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#products"
+class="btn btn-primary"
+>
+Explore Products
+</a>
+
+
+<a
+href="#contact"
+class="btn btn-secondary"
+>
+Contact Us
+</a>
+
 </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+<div class="stats-container">
+
+
+<div class="stat">
+
+<h3>
+1986
+</h3>
+
+<p>
+Since
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+100%
+</h3>
+
+<p>
+Quality Focus
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+GF
+</h3>
+
+<p>
+Gluten Free Range
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+India
+</h3>
+
+<p>
+Made for India
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+class="products"
+id="products"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<small>
+OUR PRODUCTS
+</small>
+
+
+<h2>
+Discover Vismaad
+</h2>
+
+
+<p>
+
+Explore our growing range of quality
+food products developed for today's
+consumers.
+
+</p>
+
+</div>
+
+
+<div class="product-grid">
+
+
+<!-- GLUTEN FREE ATTA -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="17896240457092059873640069671874.jpg"
+alt="Vismaad Gluten Free Atta"
+>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Vismaad Gluten Free Atta
+</h3>
+
+
+<p>
+
+Quality gluten-free atta specially
+developed for delicious everyday
+Indian cooking.
+
+</p>
+
+
+<a
+href="#contact"
+class="product-link"
+>
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- MULTIGRAIN ATTA -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="file_00000000c9ec82119b9ebdb98b1c7db1.png"
+alt="Vismaad Multigrain Atta"
+>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Vismaad Multigrain Atta
+</h3>
+
+
+<p>
+
+A nutritious multigrain formulation
+designed for wholesome everyday meals.
+
+</p>
+
+
+<a
+href="#contact"
+class="product-link"
+>
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- GLUTEN FREE BISCUITS -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="grok_1789630118526.jpg"
+alt="Vismaad Gluten Free Biscuits"
+>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+Vismaad Gluten Free Biscuits
+</h3>
+
+
+<p>
+
+Delicious gluten-free biscuits made
+for enjoyable everyday snacking.
+
+</p>
+
+
+<a
+href="#contact"
+class="product-link"
+>
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+class="about"
+id="about"
+>
+
+<div class="container">
+
+<div class="about-grid">
+
+
+<!-- NO PRODUCT IMAGE HERE -->
+
+<div class="about-image">
+</div>
+
+
+<div class="about-content">
+
+<small>
+ABOUT VISMAAD
+</small>
+
+
+<h2>
+Food Made With Purpose.
+</h2>
+
+
+<p>
+
+Vismaad Foods International is focused
+on developing quality food products for
+modern consumers while maintaining taste,
+nutrition and quality.
+
+</p>
+
+
+<p>
+
+Our product range includes gluten-free
+and nutritious food products designed
+for everyday Indian lifestyles.
+
+</p>
+
+
+<ul class="check-list">
+
+
+<li>
+Quality-focused products
+</li>
+
+
+<li>
+Gluten-free food options
+</li>
+
+
+<li>
+Carefully developed formulations
+</li>
+
+
+<li>
+Made for everyday Indian food habits
+</li>
+
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUALITY
+========================= -->
+
+<section
+class="quality"
+id="quality"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<small>
+OUR PROMISE
+</small>
+
+
+<h2>
+Quality Comes First
+</h2>
+
+
+<p>
+
+We focus on quality, consistency
+and better food experiences.
+
+</p>
+
+</div>
+
+
+<div class="quality-grid">
+
+
+<div class="quality-card">
+
+<div class="quality-icon">
+✓
+</div>
+
+<h3>
+Quality
+</h3>
+
+<p>
+
+Consistent focus on product
+quality and standards.
+
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">
+♡
+</div>
+
+<h3>
+Nutrition
+</h3>
+
+<p>
+
+Products developed with everyday
+nutrition in mind.
+
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">
+★
+</div>
+
+<h3>
+Taste
+</h3>
+
+<p>
+
+We believe healthy food should
+also taste good.
+
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">
+✓
+</div>
+
+<h3>
+Trust
+</h3>
+
+<p>
+
+Building long-term relationships
+with our customers.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+
+<h2>
+Looking for Quality Food Products?
+</h2>
+
+
+<p>
+
+Get in touch with Vismaad Foods
+International for product enquiries
+and business opportunities.
+
+</p>
+
+
+<a
+href="#contact"
+class="btn"
+>
+Contact Vismaad
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="contact"
+>
+
+<div class="container">
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+
+<h2>
+Let's Talk.
+</h2>
+
+
+<p>
+
+Have a product enquiry, distribution
+requirement or business proposal?
+Contact us.
+
+</p>
+
+
+<div class="contact-item">
+
+<strong>
+WhatsApp / Phone
+</strong>
+
 
 <a href="tel:+919463948067">
+
 +91 94639 48067
+
 </a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+WhatsApp
+</strong>
+
 
 <a
 href="https://wa.me/919463948067"
 target="_blank"
 >
-WhatsApp
+
+Chat with us on WhatsApp
+
 </a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+Company
+</strong>
+
+
+<span>
+Vismaad Foods International
+</span>
+
+</div>
+
+
+</div>
+
+
+<!-- CONTACT FORM -->
+
+<div class="contact-form">
+
+
+<form id="whatsappForm">
+
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required
+>
+
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required
+>
+
+
+<input
+type="text"
+id="subject"
+placeholder="Product / Enquiry"
+>
+
+
+<textarea
+id="message"
+placeholder="Tell us about your requirement..."
+required
+></textarea>
+
+
+<button type="submit">
+
+Send Enquiry on WhatsApp
+
+</button>
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+<div class="footer-container">
+
+
+<div>
+
+
+<div class="footer-logo">
+
+<img
+src="1000938890.jpg"
+alt="Vismaad Foods International Logo"
+>
+
+</div>
+
+
+<p>
+
+Vismaad Foods International<br>
+
+Quality Food. Better Living.
+
+</p>
+
+
+</div>
+
+
+<div>
+
+
+<div class="footer-title">
+Quick Links
+</div>
+
+
+<a href="#home">
+Home
+</a>
+
+
+<a href="#products">
+Products
+</a>
+
+
+<a href="#about">
+About Us
+</a>
+
+
+<a href="#quality">
+Quality
+</a>
+
+
+<a href="#contact">
+Contact
+</a>
+
+
+</div>
+
+
+<div>
+
+
+<div class="footer-title">
+Contact
+</div>
+
+
+<a href="tel:+919463948067">
+
++91 94639 48067
+
+</a>
+
+
+<a
+href="https://wa.me/919463948067"
+target="_blank"
+>
+
+WhatsApp
+
+</a>
+
 
 </div>
 
@@ -1355,14 +1803,18 @@ WhatsApp
 
 <div class="footer-bottom">
 
-© 2026 Vismaad Foods International. All Rights Reserved.
+© 2026 Vismaad Foods International.
+All Rights Reserved.
 
 </div>
+
 
 </footer>
 
 
-<!-- ================= FLOATING WHATSAPP ================= -->
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
 
 <a
 class="whatsapp"
@@ -1370,42 +1822,53 @@ href="https://wa.me/919463948067"
 target="_blank"
 aria-label="WhatsApp"
 >
+
 ☏
+
 </a>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 document
 .getElementById("whatsappForm")
-.addEventListener("submit", function(e){
+.addEventListener(
+    "submit",
+    function(e){
 
-    e.preventDefault();
-
-    const name =
-        document
-        .getElementById("name")
-        .value;
-
-    const phone =
-        document
-        .getElementById("phone")
-        .value;
-
-    const subject =
-        document
-        .getElementById("subject")
-        .value;
-
-    const message =
-        document
-        .getElementById("message")
-        .value;
+        e.preventDefault();
 
 
-    const whatsappMessage =
+        const name =
+            document
+            .getElementById("name")
+            .value;
+
+
+        const phone =
+            document
+            .getElementById("phone")
+            .value;
+
+
+        const subject =
+            document
+            .getElementById("subject")
+            .value;
+
+
+        const message =
+            document
+            .getElementById("message")
+            .value;
+
+
+        const whatsappMessage =
+
 `Hello Vismaad Foods International,
 
 Name: ${name}
@@ -1418,16 +1881,25 @@ Message:
 ${message}`;
 
 
-    const url =
-        "https://wa.me/919463948067?text="
-        + encodeURIComponent(whatsappMessage);
+        const url =
+
+            "https://wa.me/919463948067?text="
+            +
+            encodeURIComponent(
+                whatsappMessage
+            );
 
 
-    window.open(url, "_blank");
+        window.open(
+            url,
+            "_blank"
+        );
 
-});
+    }
+);
 
 </script>
 
+
 </body>
-    </html>
+</html>
